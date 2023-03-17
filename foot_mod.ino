@@ -18,13 +18,15 @@ const int cmdPin = 3;
 
 
 void setup() {
-  // make the pushButton pin an input:
+  // make the 4 directly wired switches use the intenal pullups. 
+  // When the switch is pressed this drains the voltage to ground and "presses" the key. 
+  // Releasing the switch allows the input to go high again
   pinMode(shiftPin, INPUT_PULLUP);
   pinMode(ctrlPin, INPUT_PULLUP);
   pinMode(altPin, INPUT_PULLUP);
   pinMode(cmdPin, INPUT_PULLUP);
 
-  // initialize control over the keyboard:
+  // Initialize the keyboard
   Keyboard.begin();
 }
 
